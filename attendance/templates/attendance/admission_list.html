@@ -1,24 +1,12 @@
-{% load staticfiles %}
-<html>
-    <head>
-        <title>Django Girls blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/attendance.css' %}">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
+{% extends 'attendance/base.html' %}
 
-        {% for admission in admissions %}
-            <div class="admission">
-                <h1><a href="">{{ admission.Person }}</a></h1>
-              <div class="date">
-                <p>{{ admission.lastAttendance|linebreaksbr }}</p>
-              </div>
-            </div>
-        {% endfor %}
-    </body>
-</html>
+{% block content %}
+  {% for admission in admissions %}
+    <div class="admission">
+        <h1><a href="">{{ admission.Person }}</a></h1>
+      <div class="date">
+        <p>{{ admission.lastAttendance|linebreaksbr }}</p>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}
