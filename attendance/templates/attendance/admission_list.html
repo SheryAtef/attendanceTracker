@@ -3,7 +3,7 @@
 {% block content %}
   {% for admission in admissions %}
     <div class="admission">
-        <h1><a href="">{{ admission.Person }}</a></h1>
+        <h1><a href="{% url 'person_detail' pk=person.pk %}">{{ admission.Person }}</a></h1>
       <div class="date">
         <p>{{ admission.lastAttendance|linebreaksbr }}</p>
       </div>

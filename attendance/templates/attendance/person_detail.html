@@ -1,0 +1,13 @@
+{% extends 'attendance/base.html' %}
+
+{% block content %}
+    <div class="admission">
+        {% if person.published_date %}
+            <div class="date">
+                {{ person.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ person.Name }}</h1>
+        <p>{{ person.mobileNumber|linebreaksbr }}</p>
+    </div>
+{% endblock %}
