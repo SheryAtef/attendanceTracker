@@ -7,6 +7,7 @@
                 {{ person.published_date }}
             </div>
         {% endif %}
+        <a class="btn btn-default" href="{% url 'person_edit' pk=person.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <h1>{{ person.Name }}</h1>
         <p>{{ person.mobileNumber|linebreaksbr }}</p>
     </div>

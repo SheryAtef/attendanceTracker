@@ -1,0 +1,51 @@
+{% extends 'attendance/base.html' %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% block content %}
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 {
+    width: 100%;
+    background-color: #f1f1c1;
+}
+</style>
+
+    <table style="width:100%">
+      <tr>
+        <th>Name</th>
+        <th>Jan</th>
+        <th>Feb</th>
+        <th>March</th>
+        <th>April</th>
+        <th>May</th>
+        <th>June</th>
+        <th>July</th>
+        <th>Augest</th>
+        <th>September</th>
+        <th>october</th>
+        <th>November</th>
+        <th>December</th>
+      </tr>
+   {% for repo in report %}
+     <tr>
+        <td>{{repo.Name}}</td>
+       {% for date in repo.Dates %}
+        <td>{{date}}</td>
+       {% endfor %}
+     </tr>
+  {% endfor %} 
+   </table>
+
+{% endblock %}

@@ -3,8 +3,8 @@ from django import forms
 from .models import Admission
 from .models import Person
 
-class AdmissionForm(forms.ModelForm):
+class PersonForm(forms.ModelForm):
 
     class Meta:
-        model = Admission
-        fields = ('person', 'lastAttendance',)
+        model = Person
+        fields = ('author','Name', 'mobileNumber','published_date',)

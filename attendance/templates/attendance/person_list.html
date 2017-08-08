@@ -1,0 +1,13 @@
+{% extends 'attendance/base.html' %}
+
+{% block content %}
+  {% for person in persons %}
+    <div class="admission">
+        <h1><a href="{% url 'person_detail' pk=person.pk %}">{{ Person.Name }}</a></h1>
+      <div class="date">
+        <p>{{ Person.published_date|linebreaksbr }}</p>
+      </div>
+        <p>{{ Person.mobileNumber }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
